@@ -139,13 +139,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const youTuberFrame = document.createElement('iframe');
                 youTuberFrame.src = `https://youtube.com/embed/${idVideo}`;
                 youtuberContainer.insertAdjacentElement('beforeend', youTuberFrame);
+
+                window.addEventListener('resize', sizeVideo);
+
                 sizeVideo();
             })
         })
 
         youTuberModal.addEventListener('click', () => {
             youTuberModal.style.display = '';
-            // youtuberContainer = '';
+            youtuberContainer = '';
+            window.removeEventListener('resize', sizeVideo);
         });
 
         
