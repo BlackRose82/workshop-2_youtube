@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
         const youtuberItems = document.querySelectorAll('[data-youtuber]');
         const youTuberModal = document.querySelector('.youTubeModal');
-        const youtuberContainer = document.querySelector('.youtuberContainer');
+        const youtuberContainer = document.querySelector('youtuberContainer');
         console.log(youTuberModal);
 
         document.body.insertAdjacentHTML('beforeend', `
