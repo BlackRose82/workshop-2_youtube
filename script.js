@@ -117,6 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 youtuberContainer.insertAdjacentElement('beforeend', youTuberFrame);
             })
         })
+
+        youTuberModal.addEventListener('click', () => {
+            youTuberModal.style.display = '';
+            youtuberContainer = '';
+        })
     }
 });
 
