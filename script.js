@@ -95,24 +95,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //модальное окно
     {
-        const youtuberItems = document.querySelectorAll('[data-youtuber]');
-        const youTuberModal = document.querySelector('.youTubeModal');
-        const youtuberContainer = document.querySelector('youtuberContainer');
-        console.log(youTuberModal);
-
         document.body.insertAdjacentHTML('beforeend', `
             <div class = "youTuberModal">
-                <div id="youtuberClose">&#215</div>
+                <div id="youtuberClose">&#215;</div>
                 <div id="youtuberContainer"></div>
             </div>
-        `)
+        `);
+
+        const youtuberItems = document.querySelectorAll('[data-youtuber]');
+        const youTuberModal = document.querySelector('.youTuberModal');
+        const youtuberContainer = document.getElementById('youtuberContainer');
+
+
         youtuberItems.forEach(elem => {
             elem.addEventListener('click', () => {
                 const idVideo = elem.dataset.youtuber;
                 youTuberModal.style.display = 'block';
                 
                 const youTuberFrame = document.createElement('iframe');
-                youTuberFrame.src = `https://youtube.com/embed/${video}`;
+                youTuberFrame.src = `https://youtube.com/embed/${idVideo}`;
                 youtuberContainer.insertAdjacentElement('beforeend', youTuberFrame);
             })
         })
